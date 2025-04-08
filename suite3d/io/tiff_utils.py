@@ -49,7 +49,7 @@ def get_tif_paths(dir_path, regex_filter=None, sort=True, natsort=False):
         list: list of tif paths
     """
     dir_path_ls = os.listdir(dir_path)
-    tif_paths = [os.path.join(dir_path, e) for e in dir_path_ls if e.endswith(".tif")]
+    tif_paths = [os.path.join(dir_path, e) for e in dir_path_ls if e.lower().endswith(('.tif', '.tiff'))]
     if regex_filter is not None:
         tif_paths_filtered = []
         for tif_path in tif_paths:
